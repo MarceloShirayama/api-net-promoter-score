@@ -19,5 +19,6 @@
   },
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "repository": "git@github.com:MarceloShirayama/api-net-promoter-score.git"
 }
