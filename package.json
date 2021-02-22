@@ -1,0 +1,7 @@
+{
+  "name": "api-net-promoter-score",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "MarceloShirayama <caixadecorreiodomarcelo@gmail>",
+  "license": "MIT"
+}
