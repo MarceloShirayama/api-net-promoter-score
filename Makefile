@@ -6,4 +6,4 @@ help:
 	@echo "lint	: Executa o eslint."
 
 lint:
-	node_modules/.bin/eslint ./src/* --fix
+	node_modules/.bin/eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./src/* --fix
