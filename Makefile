@@ -7,3 +7,6 @@ help:
 
 lint:
 	node_modules/.bin/eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./src/* --fix
+
+typeorm-help:
+	yarn typeorm -help

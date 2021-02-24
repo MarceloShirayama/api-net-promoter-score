@@ -1,4 +1,7 @@
+import 'reflect-metadata';
 import express from 'express';
+// eslint-disable-next-line import/no-unresolved,  import/extensions
+import './database';
 
 const app = express();
 const PORT: number = 3333;
