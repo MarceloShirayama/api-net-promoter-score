@@ -2,15 +2,18 @@ import 'reflect-metadata';
 import express from 'express';
 // eslint-disable-next-line import/no-unresolved,  import/extensions
 import './database';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+// import { router } from './routes';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import router from './routes';
 
 const app = express();
-const PORT: number = 3333;
-const HOST: string = '0.0.0.0';
+const PORT = 3333;
+const HOST = '0.0.0.0';
 
-// app.get('/users', (request, response) => response.send('Hello World - NLW04'));
-app.get('/', (request, response) => response.json({ message: 'Hello World - NLW04' }));
+app.use(express.json());
 
-app.post('/', (request, response) => response.json({ message: 'Os dados foram salvos com sucesso' }));
+app.use(router);
 
 // eslint-disable-next-line no-console
 app.listen(PORT, HOST, () => console.log('Server is running!'));
