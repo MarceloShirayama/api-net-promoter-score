@@ -1,14 +1,14 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
+import { getCustomRepository } from 'typeorm';
 // eslint-disable-next-line import/no-unresolved,  import/extensions
-import User from '../models/User';
+import UsersRepository from '../repositories/UsersRepository';
 
 class UserController {
   // eslint-disable-next-line class-methods-use-this
   async create(request: Request, response: Response) {
     // const body = request.body;
     const { name, email } = request.body;
-    const usersRepository = getRepository(User);
+    const usersRepository = getCustomRepository(UsersRepository);
     const userAlreadyExists = await usersRepository.findOne({
       email,
     });
