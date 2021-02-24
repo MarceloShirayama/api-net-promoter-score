@@ -22,3 +22,9 @@ $ yarn typeorm migration:run
 
 $ yarn typeorm migration:revert
 ```
+
+```!/bin/bash
+# testa a aplicação.
+
+$ yarn test -i
+```
