@@ -1,32 +1,28 @@
+### iniciar a api 
+### e no caso desta api também cria o banco de dados.
 ```!/bin/bash
-# inicia a api 
-# e no caso desta api também cria o banco de dados.
-
 $ yarn dev
 ```
+## Typeorm
+
+### criar um novo arquivo de migration com nome CreateUsers.
 
 ```!/bin/bash
-# cria um novo arquivo de migration com nome CreateUsers.
-
 $ yarn typeorm migration:create -n CreateUsers
 ```
-
+### rodar todas as migrations pendentes.
 ```!/bin/bash
-# roda todas as migrations pendentes.
-
 $ yarn typeorm migration:run
 ```
-
+### reverter a última migration executada.
 ```!/bin/bash
-# reverte a última migration executada.
-
 $ yarn typeorm migration:revert
 ```
 
-```!/bin/bash
-# testa a aplicação.
-# flag -i: Executar todos os testes em série no processo atual
-# (em vez de criar um grupo de processos filhos que realizam testes).
+## Supertest
+### testar a aplicação.
+### flag ```-i```: Executar todos os testes em série no processo atual (em vez de criar um grupo de processos filhos que realizam testes).
 
+```!/bin/bash
 $ yarn test -i
 ```
