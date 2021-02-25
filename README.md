@@ -25,6 +25,8 @@ $ yarn typeorm migration:revert
 
 ```!/bin/bash
 # testa a aplicação.
+# flag -i: Executar todos os testes em série no processo atual
+# (em vez de criar um grupo de processos filhos que realizam testes).
 
 $ yarn test -i
 ```
