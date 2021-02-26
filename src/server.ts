@@ -1,8 +1,7 @@
 // eslint-disable-next-line import/no-unresolved,  import/extensions
 import app from './app';
 
-// eslint-disable-next-line radix
-const PORT = parseInt(process.env.PORT);
+const PORT = Number(process.env.PORT);
 const { HOST } = process.env;
 
 // eslint-disable-next-line no-console

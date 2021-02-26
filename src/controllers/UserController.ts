@@ -33,4 +33,4 @@ class UserController {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export { UserController };
+export default UserController;
