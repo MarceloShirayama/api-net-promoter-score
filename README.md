@@ -1,3 +1,7 @@
+## Documentações
+- nodemailer : http://ethereal.email/
+- handlebars: https://handlebarsjs.com/
+
 ### iniciar a api 
 ### e no caso desta api também cria o banco de dados.
 ```!/bin/bash
