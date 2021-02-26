@@ -63,6 +63,13 @@ class SendMailController {
 
     return response.json(surveyUser);
   }
+
+  // eslint-disable-next-line class-methods-use-this
+  async show(request: Request, response: Response) {
+    const surveysUsersRepository = getCustomRepository(SurveysUsersRepository);
+    const all = await surveysUsersRepository.find();
+    return response.json(all);
+  }
 }
 
 export default SendMailController;

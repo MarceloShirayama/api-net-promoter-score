@@ -1,8 +1,8 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 import { Router } from 'express';
 import SendMailController from './controllers/SendMailController';
-// eslint-disable-next-line import/no-unresolved, import/extensions
 import SurveyController from './controllers/SurveyController';
-// eslint-disable-next-line import/no-unresolved, import/extensions
 import { UserController } from './controllers/UserController';
 
 const router = Router();
@@ -18,6 +18,7 @@ router.post('/surveys', surveysController.create);
 router.get('/surveys', surveysController.show);
 
 router.post('/sendMail', sendMailController.execute);
+router.get('/sendMail', sendMailController.show);
 
 // eslint-disable-next-line import/prefer-default-export
 // export { router };
