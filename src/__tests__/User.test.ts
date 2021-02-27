@@ -1,7 +1,8 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 import request from 'supertest';
-// eslint-disable-next-line import/no-unresolved,  import/extensions
+import { getConnection } from 'typeorm';
 import app from '../app';
-// eslint-disable-next-line import/no-unresolved,  import/extensions
 import createConnection from '../database';
 
 // eslint-disable-next-line no-undef
@@ -10,6 +11,13 @@ describe('Users', () => {
   beforeAll(async () => {
     const connection = await createConnection();
     await connection.runMigrations();
+  });
+
+  // eslint-disable-next-line no-undef
+  afterAll(async() => {
+    const connection = getConnection();
+    await connection.dropDatabase();
+    await connection.close();
   });
 
   // eslint-disable-next-line no-undef

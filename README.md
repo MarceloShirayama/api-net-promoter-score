@@ -6,29 +6,33 @@
 
 ### iniciar a api 
 ### e no caso desta api também cria o banco de dados.
-```!/bin/bash
+```bash
 $ yarn dev
 ```
 ## Typeorm
 
 ### criar um novo arquivo de migration com nome CreateUsers.
 
-```!/bin/bash
+```bash
 $ yarn typeorm migration:create -n CreateUsers
 ```
 ### rodar todas as migrations pendentes.
-```!/bin/bash
+```bash
 $ yarn typeorm migration:run
 ```
 ### reverter a última migration executada.
-```!/bin/bash
+```bash
 $ yarn typeorm migration:revert
 ```
 
-## Supertest
+## test
 ### testar a aplicação.
 ### flag ```-i```: Executar todos os testes em série no processo atual (em vez de criar um grupo de processos filhos que realizam testes).
 
-```!/bin/bash
-$ yarn test -i
+```yarn test -i```
+
+obs.: a flag -i foi colocada no script do package.json, portanto o comando é:
+
+```bash
+$ yarn test
 ```
