@@ -1,14 +1,28 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 import { Request, Response } from 'express';
 import { getCustomRepository } from 'typeorm';
-// eslint-disable-next-line import/no-unresolved,  import/extensions
+import * as yup from 'yup';
 import UsersRepository from '../repositories/UsersRepository';
 
 class UserController {
   // eslint-disable-next-line class-methods-use-this
   async create(request: Request, response: Response) {
-    // const body = request.body;
     const { name, email } = request.body;
+
+    const schema = yup.object().shape({
+      name: yup.string().required('Nome é obrigatório.'),
+      email: yup.string().email('Email inválido').required('Email é óbrigatório.'),
+    });
+
+    try {
+      await schema.validate(request.body, { abortEarly: false });
+    } catch (error) {
+      return response.status(400).json({ error });
+    }
+
     const usersRepository = getCustomRepository(UsersRepository);
+
     const userAlreadyExists = await usersRepository.findOne({
       email,
     });
@@ -17,6 +31,7 @@ class UserController {
         error: 'User already exixts',
       });
     }
+
     const user = usersRepository.create({
       name, email,
     });
@@ -27,7 +42,9 @@ class UserController {
   // eslint-disable-next-line class-methods-use-this
   async show(request: Request, response: Response) {
     const usersRepository = getCustomRepository(UsersRepository);
+
     const all = await usersRepository.find();
+
     return response.json(all);
   }
 }
