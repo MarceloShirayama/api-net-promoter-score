@@ -3,7 +3,7 @@ import handlebars from 'handlebars';
 import fs from 'fs';
 
 class SendMailService {
-  private client: Transporter
+  private client: Transporter;
 
   constructor() {
     nodemailer.createTestAccount().then((account) => {

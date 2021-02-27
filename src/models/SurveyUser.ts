@@ -10,31 +10,31 @@ import Survey from './Survey';
 @Entity('surveys_users')
 class SurveyUser {
   @PrimaryColumn()
-  readonly id: string
+  readonly id: string;
 
   @Column()
   // eslint-disable-next-line camelcase
-  user_id: string
+  user_id: string;
 
   @ManyToOne(() => User)
   @JoinColumn({ name: 'user_id' })
-  user: User
+  user: User;
 
   @Column()
   // eslint-disable-next-line camelcase
-  survey_id: string
+  survey_id: string;
 
   @ManyToOne(() => Survey)
   @JoinColumn({ name: 'survey_id' })
-  survey: Survey
+  survey: Survey;
 
   @Column()
   // eslint-disable-next-line camelcase
-  value: number
+  value: number;
 
   @CreateDateColumn()
   // eslint-disable-next-line camelcase
-  created_at: Date
+  created_at: Date;
 
   constructor() {
     if (!this.id) {

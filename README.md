@@ -1,6 +1,7 @@
 ## Documentações
-- nodemailer : http://ethereal.email/
-- handlebars: https://handlebarsjs.com/
+- [nodemailer](http://ethereal.email/)
+- [handlebars](https://handlebarsjs.com/)
+- [Cálculo do NPS](https://marketplace.magazineluiza.com.br/nps/?partner_id=31849&gclid=CjwKCAiA1eKBBhBZEiwAX3gqlxFH0-uD7L80vfdmFeIE1Vln4lIHyo2ctRz-pBFGiGV2ElifrqdebRoCaTYQAvD_BwE)
 
 ### iniciar a api 
 ### e no caso desta api também cria o banco de dados.
